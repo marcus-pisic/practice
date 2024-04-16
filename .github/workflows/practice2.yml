@@ -1,0 +1,13 @@
+name: Practice 2
+on: [issues]
+jobs:
+  outputs:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Event details
+          run: echo "${{ toJson(github.event) }}"
+        - name: Issue event
+          if: github.event_name == 'Issues'
+          run: echo "${{ toJson(github.event.issue) }}"
+        - name: Github context
+          run: echo "${{ toJson(github) }}"
