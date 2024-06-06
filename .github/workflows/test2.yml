@@ -1,0 +1,17 @@
+name: test1
+on:
+  workflow_call
+jobs:
+ 
+  runs-on:ubuntu-latest
+  steps:
+  - name: Checkout repo
+    uses: actions/checkout@v3
+    
+  - name: initial variables
+    id: stage-workflow
+    uses: ./variables.yaml
+    
+  - name: call variables
+    run: |
+      echo"devStageName:${{stage-workflow.stage-workflow}}"
