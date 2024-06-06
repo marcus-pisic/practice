@@ -1,6 +1,6 @@
 name: test1
 on:
-  workflow_call
+  push
 jobs:
    dev:
     runs-on: ubuntu-latest
